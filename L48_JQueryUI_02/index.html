@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="jquery-ui.min.css" type="text/css" rel="stylesheet">
+
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>  <!---顺序:jqueryUI依靠jquery---->
+    <script src="app.js"></script>
+
+    <style>
+        #zoom-button {
+            width: 55px;
+        }
+
+        #fontname-button,
+        #fontsize-button {
+            width: 45px;
+        }
+
+        #forecolor-button {
+            width: 50px;
+        }
+
+        #hilitecolor-button {
+            width: 70px;
+        }
+
+        #bold {
+            font-weight: bold;
+        }
+
+        #italic {
+            font-style: italic;
+        }
+
+        #underline {
+            text-decoration: underline;
+        }
+
+        .toolbar {
+            font-size: .75em;
+        }
+
+        #page {
+            width: auto;
+            left: 50%;
+            position: relative;
+            margin-left: -226px;
+            height: auto;
+            border: 1px solid #888;
+            box-shadow: 7px 7px 3px #ccc;
+            font-size: 11px;
+            font-family: "Lucida Grande";
+            zoom: 100%;
+            padding: 5px;
+            white-space: pre-line;
+            overflow: scroll;
+        }
+
+        .wrap {
+            width: 588px;
+        }
+    </style>
+    <script>
+        $(function () {
+            var page = $("#page");
+            var basicControls = ["#print", "#bold", "#italic", "#undo", "#redo"];
+            var valueControls = ["#fontsize", "#forecolor", "#hilitecolor", "#backcolor", "fontname"];
+
+            $("#print").button({
+                "icon": "ui-icon-print",
+                "showLabel": false
+            });
+            $("#redo").button({
+                "icon": "ui-icon-arrowreturnthick-1-e",
+                "showLabel": false
+            });
+            $("#undo").button({
+                "icon": "ui-icon-arrowreturnthick-1-w",
+                "showLabel": false
+            });
+
+            $(".toolbar").controlgroup();
+            $("#zoom").on("selectmenuchange", function () {
+                page.css({"zoom": $(this).val()});
+            })
+//            $("#print").on("click", function () {
+//                javascript:window.print();  //调用系统的打印机功能
+//            })
+
+            $(basicControls.concat(valueControls).join(", ")).on("click change selectmenuchange",
+                    function () {
+                        document.execCommand(
+                                this.id,
+                                false,
+                                $(this).val()
+                        );
+                    });
+            $("form").on("submit", function (event) {
+                event.preventDefault();
+            });
+
+            $("#datepicker").datepicker({
+                showButtonPanel: true,  //显示底部的两个按钮
+//                changeMonth: true,
+//                changeYear: false,
+                showOtherMonths: false,
+                selectOtherMonths: false,
+                numberOfMonths: 2,//显示的月份的个数
+            })
+            ;
+            $("#anima").on("change", function () {
+                $("#datepicker").datepicker("option", "showAnim", $(this).val());
+            });
+
+            $("#format").on("change", function () {
+                $("#datepicker").datepicker("option", "dateFormat", $(this).val());
+            });
+        });
+    </script>
+
+    <!---ProgressDialog--->
+    <script>
+        $(function () {
+            var dialog = $("#dialog").dialog({
+                //options
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                },
+                buttons: {
+                    "确认": function () {
+                        $(this).dialog("close");
+                        $("#deleteText").text("");
+                    },
+                    "取消": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $("#showDialog").on("click", function () {
+                //method
+                dialog.dialog("open");
+            });
+
+
+            /*******************************  ***************************/
+            var mCreateUserDialog, form,
+                    name = $("#name"),
+                    password = $("#password"),
+                    email = $("#email"),
+                    allFields = $([]).add(name).add(password).add(password);//$([])是把一个空数组变成jQuery对象咯
+            mCreateUserDialog = $("#dialog-form").dialog({
+                autoOpen: false,
+                title: "添加用户信息",
+                buttons: {
+                    "确认": addUser,//不能加括号,加括号表示立即执行这个代码
+                    "取消": function () {
+                        $(this).dialog("close");
+                    }
+                },
+                close: function () {
+                    form[0].reset();
+                    allFields.removeClass("ui-state-error");
+                }
+
+            });
+            form = mCreateUserDialog.find("form").on("submit", function (event) {
+                event.preventDefault();
+                addUser();
+            });
+
+            function
+            addUser() {
+                allFields.removeClass("ui-state-error");
+                $("#users tbody").append("<tr>" +
+                        "<td>" + name.val() + "</td>" +
+                        "<td>" + email.val() + "</td>" +
+                        "<td>" + password.val() + "</td>" +
+                        "</tr>>"
+                );
+                mCreateUserDialog.dialog("close");
+                return true;
+            }
+
+            $("#create-user").on("click", function () {
+                mCreateUserDialog.dialog("open");
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+<!---controlgroup--->
+<h1>controlgroup</h1>
+<div class="wrap">
+    <div class="toolbar">
+        <button id="print">Print</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+        <select id="zoom">
+            <option selected disabled>Zoom</option>
+            <option>50%</option>
+            <option>75%</option>
+            <option>90%</option>
+            <option>100%</option>
+            <option>125%</option>
+            <option>150%</option>
+            <option>200%</option>
+        </select>
+        <select id="fontname">
+            <option selected disabled>Font</option>
+            <option>Arial</option>
+            <option>Comic Sans MS</option>
+            <option>Courier New</option>
+            <option>Georgia</option>
+            <option>Impact</option>
+            <option>Lucida Grande</option>
+            <option>Times New Roman</option>
+            <option>Verdana</option>
+        </select>
+        <select id="fontsize">
+            <option selected disabled>Size</option>
+            <option value="1">8px</option>
+            <option value="2">9px</option>
+            <option value="3">10px</option>
+            <option value="4">11px</option>
+            <option value="5">12px</option>
+            <option value="6">14px</option>
+            <option value="7">18px</option>
+            <option value="8">24px</option>
+            <option value="9">30px</option>
+            <option value="10">36px</option>
+        </select>
+        <select id="hilitecolor" title="Background color">
+            <option selected disabled>Highlight</option>
+            <option value="white">None</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="grey">Grey</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+        </select>
+        <select id="forecolor" title="Color">
+            <option selected disabled>Color</option>
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="#ccc">Grey</option>
+            <option value="purple">Purple</option>
+            <option value="orange">Orange</option>
+        </select>
+        <button id="bold">B</button>
+        <button id="italic">I</button>
+        <button id="underline">U</button>
+
+    </div>
+    <pre id="page" contenteditable="true">
+        The Rime of the Ancient Mariner (text of 1834)
+BY SAMUEL TAYLOR COLERIDGE
+Argument
+
+How a Ship having passed the Line was driven by storms to the cold Country towards the South Pole;
+and how from thence she made her course to the tropical Latitude of the Great Pacific Ocean; and
+of the strange things that befell; and in what manner the Ancyent Marinere came back to his own
+Country.
+</pre>
+</div>
+
+<!---datepicker--->
+<h1>datepicker</h1>
+<p> date<input type="text" id="datepicker" size="50"></p>
+
+<p>animation<br/>
+    <select id="anima">
+        <option value="show">show</option>
+        <option value="slideDown">slide down</option>
+        <option value="fadeIn">fade in</option>
+        <option value="blind">blind</option>
+    </select>
+</p>
+
+<p>日期显示格式<br/>
+    <select id="format">
+        <option value="mm/dd/yy">mm/dd/yy</option>
+        <option value="DD,d MM,yy">DD,d MM,yy</option>
+        <option value="&apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy">With text - 'day' d 'of' MM 'in
+            the year' yy
+        </option>
+    </select>
+</p>
+
+<!---ProgressDialog--->
+<h1>ProgressDialog</h1>
+<button id="showDialog">显示对话框</button>
+<div id="dialog" title="确认删除">
+    <p>是否确认删除? </p>
+</div>
+<p id="deleteText">要被删除的文字:要被删除的文字:要被删除的文字:要被删除的文字:要被删除的文字:</p>
+
+<div id="dialog-form">
+    <form>
+        <fieldset>
+            <label for="name">姓名</label>
+            <input type="text" name="name" id="name" value="lxh" class="text ui-widget-content ui-corner-all">
+            <label for="email">邮箱</label>
+            <input type="text" name="email" id="email" value="lxh@163.com" class="text ui-widget-content ui-corner-all">
+            <label for="password">密码</label>
+            <input type="password" name="password" id="password" value="123123"
+                   class="text ui-widget-content ui-corner-all">
+
+            <!-- Allow form submission with keyboard without duplicating the dialog button -->
+            <input type="submit" tabindex="-1" style="position:absolute; top: -1000px;">
+        </fieldset>
+    </form>
+</div>
+
+<div>
+    <p>已有的用户</p>
+    <table id="users" class="ui-widget ui-widget-content">
+        <thead>
+        <tr class="ui-widget-header">
+            <th>姓名</th>
+            <th>邮箱</th>
+            <th>密码</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>lxh</th>
+            <th>lxh@163.com</th>
+            <th>123123</th>
+        </tr>
+        </tbody>
+    </table>
+    <button id="create-user">添加用户</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+#fd{
+    width:100px;
+    height:150px;
+    background-color: #ff3853;
+    float: left;
+}
+#sd{
+    width:150px;
+    height:100px;
+    background-color: aqua;
+    float: left;
+}
+#td{
+     width:100px;
+     height:100px;
+     background-color: #57ff40;
+    float: left;
+ }
+#contener{
+    width:300px;
+    height: 500px;
+    background-color: beige;
+}
+#text{
+
+    clear: both;
+}

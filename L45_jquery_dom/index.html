@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="selector.js"></script>
+
+    <style>
+        /*p {*/
+            /*margin: 8px;*/
+            /*font-size: 20px;*/
+            /*color: blue;*/
+            /*cursor: pointer;*/
+        /*}*/
+
+        /*b {*/
+            /*text-decoration: underline;*/
+        /*}*/
+
+        /*button {*/
+            /*cursor: pointer;*/
+        /*}*/
+
+        /*p {*/
+        /*color: #f3c2ff;*/
+        /*margin: 10px;*/
+        /*}*/
+
+        /*b {*/
+        /*margin: 10px;*/
+        /*color: red;*/
+        /*}*/
+    </style>
+
+</head>
+<body>
+<p>
+    <b>Click</b> to change the <span id="tag">html</span>
+</p>
+<p>
+    to a <span id="text">text</span> node.
+</p>
+<p>
+    This <button name="nada">button</button> does nothing.
+</p>
+
+<script>
+    $( "p" ).click(function() {
+        var htmlString = $( this ).html();
+        $( this ).text( htmlString );
+    });
+</script>
+
+
+
+<!--<p><b>Test</b>parmakljlf</p>-->
+<!--<p></p>-->
+
+<!--<script>-->
+    <!--var str = $("p:first").text();-->
+    <!--//    alert(str);-->
+    <!--$("p:last").text(str);-->
+
+<!--</script>-->
+
+<!--<p id="text"> this is my web page!!!</p>-->
+<!--<button id="btn1">点击</button>-->
+
+
+</body>
+</html>

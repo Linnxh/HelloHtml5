@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<form>
+    <input type="text" id="username">
+    <button id="btn" onclick="check()">按钮</button>
+</form>
+<script>
+    function check() {
+        var name = document.getElementById("username").value;
+        if (name == "lxh") {
+            history.go(-1);
+        } else {
+            alert("输入错误");
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+ul.url1{
+    list-style-position: outside;
+}
+
+ul.url2{
+    list-style-position: inherit;
+}
+/*ul li{*/
+
+    /*list-style-image:url("../5.jpg");*/
+    /*width:10px;*/
+    /*height: 10px;*/
+/*}*/
+
+/*body{*/
+    /*!*background-image: url("../5.jpg");*!*/
+    /*!*background-repeat: no-repeat;*!*/
+    /*!*!*center和top 位置  可以是具体数值,从xy坐标值分别为该数值位置开始*!*!*/
+    /*!*background-attachment: inherit;*!*/
+    /*!*background-clip: padding-box;*!*/
+
+    /*!*color: #ff97f2;*!*/
+    /*!*text-align: center;*!*/
+    /*!*text-indent: each-line;*!*/
+    /*text-shadow: 5px 5px 2px #bcb1df;*/
+
+/*}*/
+
+/*p{*/
+    /*!*background-color: #ddaadd;*!*/
+    /*width:100px;*/
+    /*text-wrap: none;*/
+    /*size:50px;*/
+/*}*/

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<p id="ptime"></p>
+<a onclick="stopTime()">链接</a>
+<script>
+
+    var name = location.hostname;
+    alert("hostname-->" + name);
+
+    var mytime = setInterval(function () {
+        getTime();
+    }, 1000);
+    function getTime() {
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        document.getElementById("ptime").innerHTML = time;
+        getTime();
+    }
+    function stopTime() {
+        clearInterval(mytime);
+    }
+</script>
+
+</body>
+</html>

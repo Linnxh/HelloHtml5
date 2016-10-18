@@ -1,0 +1,25 @@
+
+
+ul {
+    list-style: none;
+    margin: 0px;
+    background-color: #ddccdd;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    width: 50px;
+    text-align: center;
+    margin: 5px;
+}
+
+a:active, a:hover {
+    background-color: #9a9a89;
+}
+
+li{
+    display: inline;
+}

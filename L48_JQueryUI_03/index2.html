@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="jquery-ui.min.css" type="text/css" rel="stylesheet">
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+
+    <style>
+    </style>
+    <script>
+        $(function () {
+
+            var select = $("#select");
+            var slide = $("<div id='select-slider'></div>").insertAfter(select).slider({
+                orientation: "vertical",
+                range: "min",
+                min: 1,
+                max: 4,
+                value: select[0].selectedIndex + 1,
+                slide: function (event, ui) {
+                    select[0].selectedIndex = (ui.value) - 1;
+                }
+            });
+            $("#select").on("click", function () {
+                slide.slider("value", this.selectedIndex + 1);
+            });
+
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 300,
+                values: [20, 30],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + "-$" + ui.values[1]);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<label for="select"></label>
+<select id="select" name="select">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+</select>
+
+<h2 style="margin: 20px">slider-range</h2>
+<label for="amount"> range</label>
+<input id="amount" type="text">
+<div id="slider-range"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+p{
+    outline-color: cornflowerblue;
+    outline-style: dotted;
+}
+
+
+#tb,tr,th,td{
+    border:1px solid deepskyblue;
+}
+
+#tb{
+    width:400px;
+    height:400px;
+    text-align: center;
+    border-collapse: collapse;
+}
+#tb th{
+    text-align: right;
+    background-color: azure;
+}
+#tb tr.alt td{
+    color: black;
+    background-color: #46fffa;
+}

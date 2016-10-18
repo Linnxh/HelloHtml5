@@ -1,0 +1,29 @@
+#position1 {
+
+    width: 100px;
+    height: 100px;
+    background-color: #ddffaa;
+    position: relative;
+    left: 20px;
+    top: 20px;
+}
+
+#position2 {
+
+    width: 100px;
+    height: 100px;
+    background-color: #46fffa;
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+#position3 {
+
+    width: 100px;
+    height: 100px;
+    background-color: #447fff;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}

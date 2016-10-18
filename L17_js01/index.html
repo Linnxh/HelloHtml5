@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="divid">
+    <button id="btn1"> 按钮</button>
+    div
+</div>
+<script>
+    document.getElementById("btn1").addEventListener("click", showType);
+    document.getElementById("divid").addEventListener("click", showDiv);
+    function showType(event) {
+        alert("btn----->" + event.target)
+//        event.stopPropagation();
+    }
+
+    function showDiv(event) {
+        alert("div----->" + event.target)
+    }
+
+
+</script>
+<!--<div id="div" > helllo</div>-->
+<!--<img src="../5.jpg" id="imgid">-->
+<!--<a id="aid" href="http://www.baidu.com">hello</a>-->
+
+<!--<script>-->
+<!--function demo() {-->
+<!--var btn1 = document.getElementById("btn1").addEventListener("click", function () {-->
+<!--alert("helll")-->
+<!--});-->
+<!--//        btn1.onclick=function () {-->
+<!--//            alert("helll")-->
+<!--//        }-->
+<!--}-->
+<!--</script>-->
+
+</body>
+</html>

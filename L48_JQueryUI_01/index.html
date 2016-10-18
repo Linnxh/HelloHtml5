@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="jquery-ui.min.js"></script>  <!---顺序:jqueryUI依靠jquery---->
+    <script src="app.js"></script>
+    <link href="jquery-ui.min.css" type="text/css" rel="stylesheet">
+    <style>
+        #selectable .ui-selecting {
+            background: #ccc;
+        }
+
+        #selectable .ui-selected {
+            background: #999;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("input").checkboxradio();
+        });
+        $(function () {
+            $(".controlgroup").controlgroup()
+            $(".controlgroup-vertical").controlgroup({
+                "direction": "vertical"
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+<a href="http://www.baidu.com" id="abtn">百度</a>
+<div style="width:100px;height: 100px;background-color: #4cae4c;" id="divid"></div>
+<div style="width:200px;height: 200px;background-color: #17ede4;" id="div2"></div>
+
+<ul id="selectable">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+
+<h2>Radio Group</h2>
+
+<fieldset>
+    <legend>Select a Location:</legend>
+    <label for="radio-1">New York</label>
+    <input type="radio" name="radio-1" id="radio-1">
+    <label for="radio-2">Paris</label>
+    <input type="radio" name="radio-1" id="radio-2">
+    <label for="radio-3">London</label>
+    <input type="radio" name="radio-1" id="radio-3">
+</fieldset>
+
+<fieldset>
+    <legend>Rental Car</legend>
+    <div class="controlgroup-vertical">
+        <select>
+            <option>Compact car</option>
+            <option>Midsize car</option>
+            <option>Full size car</option>
+            <option>SUV</option>
+            <option>Luxury</option>
+            <option>Truck</option>
+            <option>Van</option>
+        </select>
+        <label for="transmission-standard-v1">Standard</label>
+        <input type="radio" name="transmission-v1" id="transmission-standard-v1">
+
+        <label for="transmission-automatic-v">Automatic</label>
+        <input type="radio" name="transmission-v1" id="transmission-automatic-v">
+
+        <label for="transmission-automatic">Automatic</label>
+        <input type="radio" name="transmission-v1" id="transmission-automatic">
+
+
+        <label for="insurance-v">Insurance</label>
+        <input type="checkbox" name="insurance" id="insurance-v">
+
+        <label for="insurance-v2">Insurance</label>
+        <input type="checkbox" name="insurance" id="insurance-v2">
+
+
+        <label for="vertical-spinner" class="ui-controlgroup-label"># of cars</label>
+        <input id="vertical-spinner" class="ui-spinner-input">
+
+
+        <button id="book">Book Now!</button>
+    </div>
+</fieldset>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+* {
+    margin: 0px;
+
+}
+
+.heading,
+.content,
+.footing {
+    margin: 10px auto;
+
+}
+
+.content {
+    margin: 10px auto;
+    height: 400px;
+}
+
+.heading {
+    height: 100px;
+    background-color: #46fffa;
+}
+
+.content {
+    background-color: #e187ff;
+}
+
+.footing {
+    height: 100px;
+    background-color: #ffa124;
+}
+
+/*.left, .center, .right {*/
+/*width: 100px;*/
+/*margin-left: 5px;*/
+/*margin-inside: 5px;*/
+/*float: left;*/
+/*}*/
+
+@media screen and (min-width: 960px ) {
+
+    .heading, .content, .footing {
+        width: 960px;
+    }
+
+    /*.left, .center, .right {*/
+    /*width: 100px;*/
+    /*margin-left: 5px;*/
+    /*margin-inside: 5px;*/
+    /*float: left;*/
+    /*}*/
+    .left, .right {
+
+        width: 200px;
+    }
+
+    .center {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 550px;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="selector.js"></script>
+<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<p> hello </p>
+
+<button id="hide"> hide</button>
+<button id="show"> show</button>
+<button id="toggle"> toggle</button>
+
+<script>
+    for (var i=0;i<5;i++){
+        $("<div>").appendTo(document.body);
+    }
+    $("div").click(function () {
+        $(this).hide(2000,function () {
+            $(this).remove();
+        });
+    });
+    
+</script>
+
+</body>
+</html>
