@@ -82,9 +82,9 @@ table {
 }
 
 /* 重置table属性 */
-img {
-    vertical-align: top
-}
+/*img {*/
+/*vertical-align: top*/
+/*}*/
 
 /* 图片在当前行内的垂直位置 */
 
@@ -117,3 +117,21 @@ a {
 .fr {
     float: right;
 }
+
+a:hover {
+    color: #f5a826;
+}
+
+.line_sz {
+    width: 1px;
+    height: 100%;
+    display: inline-block;
+    background-color: #ff9c01;
+    margin-left: 10px;
+}
+
+/*.header_bar_bot_youxia h3 {*/
+/*color: #4b88da;*/
+/*display: inline-block;*/
+/*float: left;*/
+/*}*/

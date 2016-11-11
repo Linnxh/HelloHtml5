@@ -1,0 +1,271 @@
+#header_top {
+    padding: 10px 0px;
+}
+
+#header_top img {
+    width: 13px;
+    height: 13px;
+}
+
+.commonwidth {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header_top p {
+    display: inline-block;
+}
+
+#header_bar {
+
+}
+
+.hide {
+    display: none;
+}
+
+.header_bar_top {
+    height: 60px;
+    text-align: center;
+    background-color: #1d7ad9;
+    padding: 20px;
+}
+
+.searchbox {
+    width: 360px;
+    height: 40px;
+    background-color: #fff;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.searchbox_btn {
+    width: 70px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #ff8800;
+    display: inline-block;
+    margin-left: 0px;
+}
+
+.header_shop {
+    display: inline-block;
+    height: 40px;
+    background-color: #ff8800;
+    margin: 10px auto;
+}
+
+.shop_icon {
+    margin: 10px 10px;
+}
+
+.header_shop span {
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.header_bar_top_sj {
+    margin: 0 10px;;
+}
+
+.header_bar_bot {
+    height: 35px;
+    background-color: #1369c0;
+}
+
+.allcata {
+    width: 190px;
+    text-align: center;
+    color: #fff;
+    height: 35px;
+    line-height: 35px;
+}
+
+.allcata img {
+    margin-left: 5px;
+}
+
+.header_bar_bot_ul {
+    display: inline-block;
+}
+
+.header_bar_bot_cata {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0px 30px;
+}
+
+.header_bar_bot_cata a {
+    color: #fff;
+}
+
+.header_bar_bot_fenlei {
+    width: 170px;
+    text-align: left;
+    clear: both;
+
+}
+
+.cata_table {
+    background-color: #4593fd;
+    padding: 13px 10px;
+    border-bottom: #3487F2 solid 1px;
+    border-top: #5AA1FE solid 1px;
+}
+
+.cata_table dt {
+    color: #fff;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    line-height: 16px;
+    background: url("../images/icon/shop_sj.jpg") right no-repeat;
+}
+
+.cata_table dd {
+    color: #fff;
+    font-size: 11px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.header_bar_bot_fenlei a {
+    margin-left: 5px;
+    color: #fff;
+}
+
+.header_bar_bot_bot {
+    position: relative;
+}
+
+.header_bar_bot_youxia {
+    position: absolute;
+    left: 170px;
+    top: 35px;;
+
+}
+
+.header_bar_bot_youxia h3 {
+    /*width: 100px;*/
+    height: 24px;
+    line-height: 24px;;
+}
+
+.header_bar_bot_youxia li {
+    height: 24px;
+    line-height: 24px;
+    margin-left: 10px;
+    display: inline-block;
+    float: left;
+}
+
+.header_bar_bot_youxia ul {
+    float: left;
+    margin-left: 100px;
+    margin-top: -24px;
+}
+
+.header_bar_bot_item {
+    width: 570px;
+    margin: 20px;
+}
+
+.header_bar_bot_item_right {
+    float: left;
+    display: inline-block;
+}
+
+.header_bar_bot_item div {
+    display: inline-block;
+    float: left;
+    margin-left: 100px;
+}
+
+.header_bar_bot_imgbox img {
+    height: 300px;
+}
+
+.header_bar_bot_imgbox {
+    position: absolute;
+    left: 170px;
+    top: 35px;;
+}
+
+.header_bar_banner_control_container {
+    position: absolute;
+    left: 250px;
+    bottom: 20px;
+    float: left;
+}
+
+.header_bar_banner {
+    width: 20px;
+    height: 5px;
+    background-color: #f5cd4f;
+    display: inline-block;
+}
+
+.header_bar_banner_control_container .active {
+    background-color: #fff;
+}
+
+#content {
+    clear: both;
+}
+
+.cont_computer {
+    text-align: center;
+    height: 44px;
+    padding: 10px;
+}
+
+.cont_computer span, .cont_computer a {
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cont_computer_shop_div li {
+    float: left;
+    display: inline-block;
+}
+
+.cont_computer_shop_div_top div {
+    /*height: 300px;*/
+    /*style="border: 2px #ddccdd solid; "*/
+    border-right: 1px #ddccdd solid;
+    border-top: 1px #ddccdd solid;
+    height: 100%;
+}
+
+.cont_computer_shop_div_top li {
+    width: 202px;
+    height: 100%;
+    text-align: center;
+}
+
+.cont_computer_shop_div_top li h4 {
+    /*margin: auto;*/
+    /*height: 100%;*/
+    /*text-align: center;*/
+}
+
+.cont_computer_shop_div_top img {
+
+    width: 200px;
+    height: 218px;
+}
+
+.cont_computer_shop_div_bot li {
+    border-right: 1px #ddccdd solid;
+    border-bottom: 1px #ddccdd solid;
+    border-top: 1px #ddccdd solid;
+    height: 118px;
+    width: 201px;
+
+}
+
