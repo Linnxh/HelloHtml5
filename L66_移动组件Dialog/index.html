@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name=”apple-mobile-web-app-status-bar-style” content=black”/>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            color: #118e94;
+        }
+
+        body {
+            font-size: 13px;
+            padding: 20px;
+        }
+
+        #btn1, #btn2, #btn3, #btn4 {
+            display: inline-block;
+            width: 100%;
+            background-color: #1d7ad9;
+            padding: 10px;
+            color: #fff;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+    <link type="text/css" href="dialog.css" rel="stylesheet">
+</head>
+<body>
+<button id="btn1">aaa没有传递任务参数(需手动关闭)</button>
+<button id="btn2">弹出一个不带任何按钮,且是警告的框,并且2s自动关闭</button>
+<button id="btn3">弹出一个有确认和取消按钮,且是警告的框</button>
+<button id="btn4">弹出一个有确认和取消按钮,点击确定弹出一个不带任何按钮的对话框,2s后自定关闭,</button>
+<!--<button id="btn5">弹出一个不带任何按钮,且是警告的框,并且2s自动关闭</button>-->
+<script src="zepto.js"></script>
+<script src="zeptodialog.js"></script>
+<script>
+
+    $("#btn4").on("click", function () {
+        var d = $.dialog(
+                {
+
+                    type: "warn",
+                    message: "delete",
+                    maskOpacity: 0.2,
+                    buttons: [
+                        {
+                            type: "red",
+                            text: "不好",
+                        },
+                        {
+                            type: "green",
+                            text: "确定",
+                            callback: function () {
+                                var d = $.dialog(
+                                        {
+                                            type: "warn",
+                                            message: "delete",
+                                            delay: 3000,
+                                        }
+                                );
+                                return true;
+                            }
+                        }
+                    ]
+                }
+        );
+    });
+
+    $("#btn3").on("click", function () {
+        var d = $.dialog(
+                {
+                    width: "auto",
+                    type: "warn",
+                    message: "delete",
+                    maskOpacity: 0.2,
+                    buttons: [
+                        {
+                            type: "red",
+                            text: "不好",
+                        },
+                        {
+                            type: "green",
+                            text: "好",
+                            callback: function () {
+                                alert("good--good---good");
+                                return true;
+                            }
+                        }
+                    ]
+                }
+        );
+    });
+    //    var d =  $.dialog(
+    //            {
+    //                type: "warn",
+    //                message: "delete",
+    //                maskOpacity: 0.2,
+    //                buttons: [
+    //                    {
+    //                        type: "red",
+    //                        text: "不好",
+    ////                        callback: function () {
+    ////                            alert("no----no---no");
+    ////                        }
+    //
+    //                    },
+    //                    {
+    //                        type: "green",
+    //                        text: "好",
+    //                        callback: function () {
+    //                            alert("good--good---good");
+    //                            return true;
+    //                        }
+    //                    }
+    //                ]
+    //            }
+    //    );
+</script>
+</body>
+</html>

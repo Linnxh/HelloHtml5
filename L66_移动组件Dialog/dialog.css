@@ -1,0 +1,77 @@
+.g-dialog-contianer{
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    /*display:-webkit-box;*/
+    /*-webkit-box-pack: center;*/
+    /*-webkit-box-align: center;*/
+}
+
+.dialog-window{
+    padding: 1em;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+}
+
+/*.dialog-window .dialog-header{*/
+    /*width: 50px;*/
+    /*height: 50px;*/
+    /*margin: 0 auto;*/
+    /*background: url("img/duihao.png") no-repeat  center;*/
+/*}*/
+
+.dialog-window .dialog-header.ok{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: url("img/duihao.png") no-repeat  center;
+}
+.dialog-window .dialog-header.warn{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: url("img/close.png") no-repeat  center;
+}
+.dialog-window .dialog-header.waiting{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: url("img/prg_loading.png") no-repeat  center;
+}
+
+.dialog-content{
+    padding: 0em 1em;
+    line-height: 180%;
+    text-align: center;
+}
+
+.dialog-footer button{
+    padding: 0.5em 1.8em;
+    line-height: 180%;
+    text-align: center;
+    border:none;
+    color: #eeeeee;
+    text-shadow: #666 1px 1px 0 ;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.8);
+    margin:0.3em;
+}
+
+.dialog-footer .green{
+    background-color: rgba(51, 163, 78, 0.8);
+}
+.dialog-footer button.red{
+    background-color: rgba(163, 22, 21, 0.8);
+}
+.dialog-footer{
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
